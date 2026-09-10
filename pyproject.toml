@@ -1,0 +1,11 @@
+[project]
+name = "deepshelf"
+version = "0.1.0"
+description = "A web-based application for keeping tabs on articles you have read."
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+]
+
+[tool.fastapi]
+entrypoint="app.api.router:app"
