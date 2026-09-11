@@ -1,4 +1,131 @@
-#intro {
+:root {
+    --primary : rgb(124, 171, 248);
+    --secondary : black;
+
+    --background : white;
+}
+
+html, body {
+    margin: 0px;
+}
+
+
+
+#header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#logo {
+    margin-left: 20px;
+}
+
+#logo p {
+    color: var(--primary);
+    font-family: Italianno, cursive;
+    font-weight: bold;
+    font-size: 1.7rem;
+
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+
+#nav-bar {
     display: flex;
     flex-direction: row;
+    column-gap: 2.9rem;
+    margin-right: 20px;
+}
+
+#intro {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#left {
+    padding: 40px;
+    width: 60%;
+}
+
+#left #intro-header {
+    font-size: 30px;
+}
+
+#left #intro-description {
+    font-size: 18px;
+}
+
+#start-btn {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    padding-right: 15px;
+    padding-left: 15px;
+
+
+    background-color: var(--primary);
+    border-radius: 20px;
+    width: 300px;
+}
+
+#start-btn:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+    transition: ease-in-out;
+}
+
+#feature-header {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+#feature #card-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+}
+
+.card {
+    text-align: center;
+
+    border: 1px var(--secondary) solid;
+    width: 85%;
+    
+    background-color: var(--primary);
+    border-radius: 10px;
+    box-shadow: 3px 3px 0px 1px var(--secondary);
+}
+
+.card .head {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#feature {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary);
+}
+
+#nav-start-btn{
+    font-size: 1rem;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: var(--background);
+    border-radius: 10px;
+}
+
+#nav-start-btn:hover {
+    
+
+    background-color: var(--secondary);
+    color: var(--background);
 }

@@ -8,9 +8,15 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/index.css">
+
+    <!-- Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <header>
+    <header id="header-nav">
         <div id="logo">
             <p>DeepShelf</p>
         </div>
@@ -18,17 +24,20 @@
             <a href="">Home</a>
             <a href="">Sign In</a>
             <a href="">Features</a>
-            <button>Get Started</button>
+            <button id="nav-start-btn">Get Started</button>
         </nav>
     </header>
     <main id="main-container">
         <section id="intro">
             <div id="left">
-                <p id="intro-header">Your digital bookshelf, powered by meaning.</p>
-                <p id="intro-description">Never lose a great read again. Save links to books, articles, and text websites, then find them instantly by searching for concepts and ideas—not just exact keywords.</p>
+                <div id="left-contents">
+                    <p id="intro-header">Your digital bookshelf, powered by meaning.</p>
+                    <p id="intro-description">Never lose a great read again. Save links to books, articles, and text websites, then find them instantly by searching for concepts and ideas—not just exact keywords.</p>
+                    <button id="start-btn">Get Started</button>
+                </div>
             </div>
             <div id="right">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="45%" height="auto" fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="auto" height="auto" fill="none">
                     <!-- Tech Branches / Circuit Connections -->
                     <g stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <!-- Branch to Brain (Top-Left) -->
@@ -152,31 +161,31 @@
                 </svg>
             </div>
         </section>
-        <section id="works">
-            <p>Features</p>
+        <section id="feature">
+            <p id="feature-header">Features</p>
             <section id="card-container">
                 <div class="card" id="card-1">
-                    <h3 class="head">Universal URL Ingestion</h3>
+                    <p class="head">Universal URL Ingestion</p>
                     <p class="description">Save links to books, articles, research papers, and text websites. The application extracts the core readable content cleanly.</p>
                 </div>
                 <div class="card" id="card-2">
-                    <h3 class="head">Automated AI Summarization</h3>
+                    <p class="head">Automated AI Summarization</p>
                     <p class="description">AI parses and distills long-form web content into concise summaries, capturing the core ideas without the noise.</p>
                 </div>
                 <div class="card" id="card-3">
-                    <h3 class="head">Summary Vector Storage</h3>
+                    <p class="head">Summary Vector Storage</p>
                     <p class="description">AI-generated summaries are converted to embeddings and stored in a vector database for high-level conceptual discovery.</p>
                 </div>
                 <div class="card" id="card-4">
-                    <h3 class="head">Full-Text Vector Indexing</h3>
+                    <p class="head">Full-Text Vector Indexing</p>
                     <p class="description">Complete page contents are chunked and embedded alongside summaries to preserve granular context and specific passages.</p>
                 </div>
                 <div class="card" id="card-5">
-                    <h3 class="head">Two-Way Semantic Search</h3>
+                    <p class="head">Two-Way Semantic Search</p>
                     <p class="description">Perform dual-layer queries across your library—search broad themes across summaries or retrieve exact excerpts through full-text vectors.</p>
                 </div>
                 <div class="card" id="card-6">
-                    <h3 class="head">Concept-Based Knowledge Retrieval</h3>
+                    <p class="head">Concept-Based Knowledge Retrieval</p>
                     <p class="description">Retrieve saved knowledge using natural language and intent, locating relevant reads even when you do not remember exact keywords.</p>
                 </div>
             </section>
