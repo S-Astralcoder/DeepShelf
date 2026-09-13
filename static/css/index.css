@@ -38,6 +38,11 @@ html, body {
     flex-direction: row;
     column-gap: 2.9rem;
     margin-right: 20px;
+    font-size: 1.3rem;
+}
+
+#nav-bar a:hover {
+    color: var(--primary);
 }
 
 #intro {
