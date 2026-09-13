@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepShelf - Sign Up</title>
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header id="header-nav">
+        <div id="logo">
+            <p>DeepShelf</p>
+        </div>
+        <nav id="nav-bar">
+            <a href="index.html">Home</a>
+            <a href="login.html">Sign In</a>
+            <a href="index.html#feature">Features</a>
+            <button id="nav-start-btn" onclick="redirect_to_login()">Get Started</button>
+        </nav>
+    </header>
+    <main>
+        <section id="login-box">
+            <div id="box-left">
+                <p id="box-header">Create Your DeepShelf Account</p>
+                <p id="box-description">Start organizing your reading universe. Save articles, generate AI summaries, and unlock concept-based semantic search across all your saved reads.</p>
+            </div>
+            <div id="box-right">
+                <form action="#" method="post">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required autocomplete="name">
+                    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required autocomplete="email">
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required autocomplete="new-password">
+
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm your password" required autocomplete="new-password">
+                    
+                    <button type="submit">Sign Up</button>
+
+                    <div id="alternative-options">
+                        <a href="login.html">Already have an account? Log In</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

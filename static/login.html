@@ -21,14 +21,35 @@
             <p>DeepShelf</p>
         </div>
         <nav id="nav-bar">
-            <a href="">Home</a>
-            <a href="">Sign In</a>
-            <a href="">Features</a>
+            <a href="index.html">Home</a>
+            <a href="login.html">Sign In</a>
+            <a href="index.html#feature">Features</a>
             <button id="nav-start-btn" onclick="redirect_to_login()">Get Started</button>
         </nav>
     </header>
     <main>
-        
+        <section id="login-box">
+            <div id="box-left">
+                <p id="box-header">Welcome Back to DeepShelf</p>
+                <p id="box-description">Your digital bookshelf, powered by meaning. Sign in to access your curated library, AI-generated summaries, and semantic search across your saved articles and books.</p>
+            </div>
+            <div id="box-right">
+                <form action="#" method="post">
+                    <label for="name">Username or Email</label>
+                    <input type="text" id="name" name="username" placeholder="Enter your username or email" required autocomplete="username">
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="current-password">
+                    
+                    <button type="submit">Login</button>
+
+                    <div id="alternative-options">
+                        <a href="signup.html">Don't have an account? Sign up</a>
+                        <a href="#">Forgot password?</a>
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
 </body>
 </html>
