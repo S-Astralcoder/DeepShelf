@@ -23,8 +23,8 @@
         </section>
         <section id="side-options">
             <ul id="options">
-                <li><i class="fa-solid fa-file"></i> Dashboard</li>
-                <li><i class="fa-solid fa-chart-simple"></i> Status</li>
+                <li><a href="dashboard.html"><i class="fa-solid fa-file"></i> Dashboard</a></li>
+                <li class="active"><a href="status.html"><i class="fa-solid fa-chart-simple"></i> Status</a></li>
                 <li><i class="fa-solid fa-gear"></i> Settings</li>
             </ul>
             <div id="profile-card">
@@ -38,25 +38,25 @@
     </aside>
     <main id="main-box">
         <section id="status-cards">
-            <section id="total-book-card">
-                <p id="card-name">Total Books</p>
-                <p id="total-count"></p> 
+            <section id="total-book-card" class="status-card">
+                <p class="card-name" id="card-name">Total Books</p>
+                <p class="total-count" id="total-count">24</p> 
             </section>
-            <section id="total-book-read-card">
-                <p id="card-name"></p>
-                <p id="total-count"></p> 
+            <section id="total-book-read-card" class="status-card">
+                <p class="card-name">Books Read</p>
+                <p class="total-count">14</p> 
             </section>
-            <section id="total-book-unread-card">
-                <p id="card-name"></p>
-                <p id="total-count"></p> 
+            <section id="total-book-unread-card" class="status-card">
+                <p class="card-name">Unread Books</p>
+                <p class="total-count">10</p> 
             </section>
-            <section id="total-book-marked-card">
-                <p id="card-name"></p>
-                <p id="total-count"></p> 
+            <section id="total-book-marked-card" class="status-card">
+                <p class="card-name">Bookmarked</p>
+                <p class="total-count">6</p> 
             </section>
         </section>
         <ul id="book-options">
-            <li>Read</li>
+            <li class="active">Read</li>
             <li>Unread</li>
             <li>BookMarked</li>
         </ul>

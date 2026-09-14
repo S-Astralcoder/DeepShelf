@@ -86,13 +86,22 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-#options li:first-child {
+#options a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+#options li.active {
     background-color: var(--primary);
     border: 1px solid var(--secondary);
     box-shadow: 2px 2px 0px 1px var(--secondary);
 }
 
-#options li:hover:not(:first-child) {
+#options li:hover:not(.active) {
     color: var(--primary);
     transform: translateX(4px);
 }
@@ -402,4 +411,109 @@ body {
 .book-mark:hover,
 .read-mark:hover {
     color: var(--primary);
+}
+
+/* Status Dashboard Page Layout */
+#status-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+}
+
+#status-cards > section,
+.status-card {
+    background-color: var(--background);
+    border: 1px solid var(--secondary);
+    border-radius: 12px;
+    box-shadow: 3px 3px 0px 1px var(--secondary);
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#status-cards > section:hover,
+.status-card:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px 1px var(--secondary);
+}
+
+.card-name,
+#status-cards p:first-child {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555555;
+    margin: 0;
+}
+
+.total-count,
+#status-cards p:last-child {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin: 0;
+    line-height: 1.1;
+}
+
+/* Book Options Tabs */
+#book-options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+#book-options li {
+    padding: 8px 22px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1px solid var(--secondary);
+    border-radius: 20px;
+    box-shadow: 2px 2px 0px 1px var(--secondary);
+    background-color: var(--background);
+    color: var(--secondary);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#book-options li.active {
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+#book-options li:hover:not(.active) {
+    background-color: var(--secondary);
+    color: var(--primary);
+    box-shadow: 0px 0px 0px 0px var(--secondary);
+}
+
+/* Option Contents Box */
+#option-contents {
+    flex: 1;
+    background-color: var(--background);
+    border: 1px solid var(--secondary);
+    border-radius: 12px;
+    box-shadow: 3px 3px 0px 1px var(--secondary);
+    padding: 18px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#read-contents,
+#unread-contents,
+#book-marked-contents {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    align-content: start;
+}
+
+#option-contents > section:not(.active):not(:first-child) {
+    display: none;
 }
