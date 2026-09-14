@@ -64,14 +64,29 @@
             </div>
         </section>
         <section id="content-box">
-            <section class="book-card">
+            <section class="book-card" data-id="book-1" data-title="Clean Code" data-read="false" data-bookmarked="false">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Clean Code</p>
                         <p class="description">A Handbook of Agile Software Craftsmanship.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark">
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -89,14 +104,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-2" data-title="The Pragmatic Programmer" data-read="true" data-bookmarked="true">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">The Pragmatic Programmer</p>
                         <p class="description">Your Journey To Mastery, 20th Anniversary Edition.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark" checked>
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read" checked>
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -114,14 +144,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-3" data-title="Design Patterns" data-read="false" data-bookmarked="false">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Design Patterns</p>
                         <p class="description">Elements of Reusable Object-Oriented Software.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark">
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -139,14 +184,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-4" data-title="Refactoring" data-read="false" data-bookmarked="true">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Refactoring</p>
                         <p class="description">Improving the Design of Existing Code.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark" checked>
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -163,14 +223,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-5" data-title="Designing Data-Intensive Applications" data-read="true" data-bookmarked="true">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Designing Data-Intensive Applications</p>
                         <p class="description">The big ideas behind reliable, scalable systems.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark" checked>
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read" checked>
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -188,14 +263,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-6" data-title="Introduction to Algorithms" data-read="false" data-bookmarked="false">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Introduction to Algorithms</p>
                         <p class="description">Comprehensive foundation of algorithmic problem solving.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark">
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -213,14 +303,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-7" data-title="You Don't Know JS" data-read="true" data-bookmarked="true">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">You Don't Know JS</p>
                         <p class="description">Deep dive into the core mechanisms of JavaScript.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark" checked>
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read" checked>
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -238,14 +343,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-8" data-title="Structure & Interpretation of Computer Programs" data-read="false" data-bookmarked="false">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Structure & Interpretation of Computer Programs</p>
                         <p class="description">Functional programming and computer abstraction principles.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark">
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -263,14 +383,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-9" data-title="Clean Architecture" data-read="false" data-bookmarked="true">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Clean Architecture</p>
                         <p class="description">A Craftsman's Guide to Software Structure and Design.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark" checked>
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -287,14 +422,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-10" data-title="Domain-Driven Design" data-read="false" data-bookmarked="false">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Domain-Driven Design</p>
                         <p class="description">Tackling Complexity in the Heart of Software.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark">
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -312,14 +462,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-11" data-title="Site Reliability Engineering" data-read="true" data-bookmarked="true">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Site Reliability Engineering</p>
                         <p class="description">How Google runs production systems at scale.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark" checked>
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read" checked>
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -337,14 +502,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-12" data-title="Building Microservices" data-read="false" data-bookmarked="false">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Building Microservices</p>
                         <p class="description">Designing fine-grained systems by Sam Newman.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark">
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -362,14 +542,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-13" data-title="Kubernetes Up & Running" data-read="false" data-bookmarked="false">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Kubernetes Up & Running</p>
                         <p class="description">Dive into the future of infrastructure automation.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark">
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -387,14 +582,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-14" data-title="Cracking the Coding Interview" data-read="true" data-bookmarked="true">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Cracking the Coding Interview</p>
                         <p class="description">189 programming questions and solutions.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark" checked>
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read" checked>
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -412,14 +622,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-15" data-title="The Mythical Man-Month" data-read="false" data-bookmarked="false">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">The Mythical Man-Month</p>
                         <p class="description">Essays on software engineering and project management.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark">
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -437,14 +662,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-16" data-title="Code Complete" data-read="false" data-bookmarked="true">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Code Complete</p>
                         <p class="description">A practical handbook of software construction.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark" checked>
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -461,14 +701,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-17" data-title="Modern Operating Systems" data-read="false" data-bookmarked="false">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Modern Operating Systems</p>
                         <p class="description">Processes, memory management, and file systems by Tanenbaum.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark">
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -486,14 +741,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-18" data-title="Computer Networking" data-read="true" data-bookmarked="true">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Computer Networking</p>
                         <p class="description">A top-down approach focusing on the Internet.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark" checked>
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read" checked>
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -511,14 +781,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-19" data-title="Rust in Action" data-read="false" data-bookmarked="false">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Rust in Action</p>
                         <p class="description">Systems programming with memory safety and speed.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark">
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -536,14 +821,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-20" data-title="Go in Practice" data-read="false" data-bookmarked="true">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Go in Practice</p>
                         <p class="description">Includes 70 practical techniques for building microservices in Go.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark" checked>
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -561,14 +861,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-21" data-title="Deep Learning" data-read="false" data-bookmarked="false">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Deep Learning</p>
                         <p class="description">Comprehensive textbook on deep learning by Goodfellow and Bengio.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark">
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -586,14 +901,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-22" data-title="Eloquent JavaScript" data-read="true" data-bookmarked="true">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Eloquent JavaScript</p>
                         <p class="description">A modern introduction to programming with JavaScript.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark" checked>
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read" checked>
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -611,14 +941,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-23" data-title="Database Internals" data-read="false" data-bookmarked="false">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">Database Internals</p>
                         <p class="description">A deep dive into how distributed storage and engines work.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark">
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -636,14 +981,29 @@
                     </div>
                 </div>
             </section>
-            <section class="book-card">
+            <section class="book-card" data-id="book-24" data-title="JavaScript: The Good Parts" data-read="false" data-bookmarked="false">
                 <div class="upper">
                     <div class="book-info">
                         <p class="title">JavaScript: The Good Parts</p>
                         <p class="description">Unearthing the elegant parts of the web's universal language.</p>
                     </div>
                     <div class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark">
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="lower">
@@ -662,14 +1022,29 @@
             </section>
         </section>
         <template id="book-card-template">
-            <section id="book-card" class="book-card">
+            <section id="book-card" class="book-card" data-id="" data-title="" data-read="false" data-bookmarked="false">
                 <div id="upper" class="upper">
                     <div id="book-info" class="book-info">
                         <p id="title" class="title"></p>
                         <p id="description" class="description"></p>
                     </div>
                     <div id="card-options" class="card-options">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <button type="button" class="card-options-btn" title="Card Options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <div class="card-options-menu hidden">
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-bookmark">
+                                <span>Bookmark</span>
+                            </label>
+                            <label class="card-opt-item">
+                                <input type="checkbox" class="card-opt-read">
+                                <span>Read</span>
+                            </label>
+                            <button type="button" class="card-opt-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div id="lower" class="lower">
@@ -678,11 +1053,9 @@
                     </ul>
                     <div id="mark-options" class="mark-options">
                         <div id="book-mark" class="book-mark">
-                            <i class="fa-solid fa-bookmark"></i>
                             <i class="fa-regular fa-bookmark"></i>
                         </div>
                         <div id="read-mark" class="read-mark">
-                            <i class="fa-solid fa-book-open-reader"></i>
                             <i class="fa-solid fa-book-open"></i>
                         </div>
                     </div>

@@ -376,7 +376,8 @@ body {
     width: 100%;
     height: 190px;
     box-sizing: border-box;
-    overflow: hidden;
+    position: relative;
+    overflow: visible;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -391,7 +392,8 @@ body {
     align-items: flex-start;
     gap: 8px;
     width: 100%;
-    overflow: hidden;
+    position: relative;
+    overflow: visible;
 }
 
 .book-info, #book-info {
@@ -423,15 +425,79 @@ body {
 }
 
 .card-options, #card-options {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.card-options-btn {
+    background: none;
+    border: none;
     cursor: pointer;
     color: #555555;
     padding: 2px 4px;
-    flex-shrink: 0;
+    font-size: 1rem;
     transition: color 0.15s ease;
 }
 
-.card-options:hover {
+.card-options-btn:hover {
     color: var(--primary);
+}
+
+.card-options-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    min-width: 120px;
+    background-color: var(--background);
+    border: 1px solid var(--secondary);
+    border-radius: 8px;
+    box-shadow: 2px 2px 0px 1px var(--secondary);
+    padding: 6px 8px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.card-options-menu.hidden {
+    display: none;
+}
+
+.card-opt-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+}
+
+.card-opt-item input[type="checkbox"] {
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.card-opt-delete {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    border-top: 1px dashed #dddddd;
+    padding-top: 6px;
+    margin-top: 2px;
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #cc0000;
+    cursor: pointer;
+    text-align: left;
+    transition: opacity 0.15s ease;
+}
+
+.card-opt-delete:hover {
+    opacity: 0.75;
 }
 
 .lower, #lower {
