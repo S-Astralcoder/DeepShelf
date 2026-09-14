@@ -1,65 +1,36 @@
 /**
- * Dashboard interactivity, card actions, options menu, and filter handling
+ * ==========================================================================
+ * Dashboard Controller Module
+ * ==========================================================================
+ * Organized into focused modules for clean separation of concerns:
+ *   1. Card Visuals & State Sync
+ *   2. Card Events & Interactions
+ *   3. Card CRUD Operations (addBookCard, clearCards)
+ *   4. Filter & Sorting Handling
+ *   5. Add Book Form Handling
+ *   6. Initialization & Global Exports
+ * ==========================================================================
  */
+
 document.addEventListener("DOMContentLoaded", () => {
+    // ----------------------------------------------------------------------
+    // DOM Elements Cache
+    // ----------------------------------------------------------------------
+    const contentBox = document.getElementById("content-box");
+    const template = document.getElementById("book-card-template");
     const filterBtn = document.getElementById("filter-btn");
     const filterMenu = document.getElementById("filter-menu");
     const filterOptions = document.querySelectorAll("#filter-options li");
-    const contentBox = document.getElementById("content-box");
-    const template = document.getElementById("book-card-template");
     const addBookBtn = document.querySelector("#control-btn button");
     const bookUrlInput = document.getElementById("book-url-input");
 
-    // Filter dropdown toggle
-    if (filterBtn && filterMenu) {
-        filterBtn.addEventListener("click", (event) => {
-            event.stopPropagation();
-            closeAllCardMenus();
-            filterMenu.classList.toggle("hidden");
-            filterBtn.classList.toggle("active");
-        });
-
-        document.addEventListener("click", (event) => {
-            if (!filterMenu.contains(event.target) && !filterBtn.contains(event.target)) {
-                filterMenu.classList.add("hidden");
-                filterBtn.classList.remove("active");
-            }
-        });
-
-        filterOptions.forEach((option) => {
-            option.addEventListener("click", () => {
-                filterOptions.forEach((opt) => opt.classList.remove("selected"));
-                option.classList.add("selected");
-
-                filterMenu.classList.add("hidden");
-                filterBtn.classList.remove("active");
-
-                const sortType = option.dataset.sort;
-                sortCards(sortType);
-            });
-        });
-    }
+    // ======================================================================
+    // 1. Card Visuals & State Sync
+    // ======================================================================
 
     /**
-     * Close all open card options menus
-     */
-    function closeAllCardMenus(exceptMenu = null) {
-        document.querySelectorAll(".card-options-menu").forEach((menu) => {
-            if (menu !== exceptMenu) {
-                menu.classList.add("hidden");
-            }
-        });
-    }
-
-    // Close card menus on outside click
-    document.addEventListener("click", (event) => {
-        if (!event.target.closest(".card-options")) {
-            closeAllCardMenus();
-        }
-    });
-
-    /**
-     * Update card visual icons to match data attributes
+     * Synchronize card visual icons and menu checkboxes with dataset state.
+     * @param {HTMLElement} card - The .book-card element.
      */
     function syncCardVisuals(card) {
         const isBookmarked = card.dataset.bookmarked === "true";
@@ -81,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 : '<i class="fa-solid fa-book-open"></i>';
         }
 
-        // Sync checkboxes in menu
+        // Sync menu checkboxes
         const bookmarkCheckbox = card.querySelector(".card-opt-bookmark");
         if (bookmarkCheckbox) {
             bookmarkCheckbox.checked = isBookmarked;
@@ -94,7 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /**
-     * Set bookmark state on a card
+     * Update card bookmark state and refresh visuals.
+     * @param {HTMLElement} card
+     * @param {boolean} val
      */
     function setBookmark(card, val) {
         card.dataset.bookmarked = String(val);
@@ -102,7 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /**
-     * Set read state on a card
+     * Update card read state and refresh visuals.
+     * @param {HTMLElement} card
+     * @param {boolean} val
      */
     function setRead(card, val) {
         card.dataset.read = String(val);
@@ -110,7 +85,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /**
-     * Bind events to a single book card
+     * Close all open card dropdown menus, optionally excluding one.
+     * @param {HTMLElement|null} exceptMenu
+     */
+    function closeAllCardMenus(exceptMenu = null) {
+        document.querySelectorAll(".card-options-menu").forEach((menu) => {
+            if (menu !== exceptMenu) {
+                menu.classList.add("hidden");
+            }
+        });
+    }
+
+    // ======================================================================
+    // 2. Card Events & Interactions
+    // ======================================================================
+
+    /**
+     * Bind all event listeners to a book card (dropdown, checkboxes, icons, delete).
+     * @param {HTMLElement} card
      */
     function setupCardEvents(card) {
         const optionsBtn = card.querySelector(".card-options-btn");
@@ -121,18 +113,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const bookMarkIcon = card.querySelector(".book-mark");
         const readMarkIcon = card.querySelector(".read-mark");
 
-        // Toggle card options menu
+        // Options dropdown toggle
         if (optionsBtn && optionsMenu) {
             optionsBtn.addEventListener("click", (e) => {
                 e.stopPropagation();
                 if (filterMenu) filterMenu.classList.add("hidden");
                 const willOpen = optionsMenu.classList.contains("hidden");
                 closeAllCardMenus(willOpen ? optionsMenu : null);
-                if (willOpen) {
-                    optionsMenu.classList.remove("hidden");
-                } else {
-                    optionsMenu.classList.add("hidden");
-                }
+                optionsMenu.classList.toggle("hidden", !willOpen);
             });
 
             optionsMenu.addEventListener("click", (e) => {
@@ -140,21 +128,21 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // Checkbox: Bookmark
+        // Bookmark checkbox toggle
         if (bookmarkCheckbox) {
             bookmarkCheckbox.addEventListener("change", () => {
                 setBookmark(card, bookmarkCheckbox.checked);
             });
         }
 
-        // Checkbox: Read
+        // Read checkbox toggle
         if (readCheckbox) {
             readCheckbox.addEventListener("change", () => {
                 setRead(card, readCheckbox.checked);
             });
         }
 
-        // Delete card
+        // Delete card button
         if (deleteBtn) {
             deleteBtn.addEventListener("click", (e) => {
                 e.stopPropagation();
@@ -162,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // Direct icon click: Bookmark toggle
+        // Direct bookmark icon toggle
         if (bookMarkIcon) {
             bookMarkIcon.addEventListener("click", (e) => {
                 e.stopPropagation();
@@ -171,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // Direct icon click: Read toggle
+        // Direct read icon toggle
         if (readMarkIcon) {
             readMarkIcon.addEventListener("click", (e) => {
                 e.stopPropagation();
@@ -180,23 +168,71 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // Initial visual sync
+        // Initial icon & checkbox synchronization
         syncCardVisuals(card);
     }
 
-    // Attach event listeners to all pre-rendered cards
-    document.querySelectorAll(".book-card").forEach((card) => {
-        setupCardEvents(card);
-    });
+    // ======================================================================
+    // 3. Card CRUD Operations
+    // ======================================================================
 
     /**
-     * Dynamically add a new book card to #content-box
+     * Create a fresh card DOM element from template or fallback HTML.
+     * @returns {HTMLElement}
+     */
+    function createCardElement() {
+        if (template && template.content) {
+            const clone = template.content.cloneNode(true);
+            return clone.querySelector(".book-card");
+        }
+
+        const fallback = document.createElement("section");
+        fallback.className = "book-card";
+        fallback.innerHTML = `
+            <div class="upper">
+                <div class="book-info">
+                    <p class="title"></p>
+                    <p class="description"></p>
+                </div>
+                <div class="card-options">
+                    <button type="button" class="card-options-btn" title="Card Options">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                    <div class="card-options-menu hidden">
+                        <label class="card-opt-item">
+                            <input type="checkbox" class="card-opt-bookmark">
+                            <span>Bookmark</span>
+                        </label>
+                        <label class="card-opt-item">
+                            <input type="checkbox" class="card-opt-read">
+                            <span>Read</span>
+                        </label>
+                        <button type="button" class="card-opt-delete">
+                            <i class="fa-solid fa-trash-can"></i> Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="lower">
+                <ul class="tags"></ul>
+                <div class="mark-options">
+                    <div class="book-mark"><i class="fa-regular fa-bookmark"></i></div>
+                    <div class="read-mark"><i class="fa-solid fa-book-open"></i></div>
+                </div>
+            </div>
+        `;
+        return fallback;
+    }
+
+    /**
+     * Dynamically add a new book card to #content-box.
      * @param {Object} bookData - { uuid, title, description, tags, read, bookmarked }
-     * @returns {HTMLElement} The created card element
+     * @returns {HTMLElement|null} The created card element.
      */
     function addBookCard(bookData = {}) {
         if (!contentBox) return null;
 
+        const card = createCardElement();
         const uuid = bookData.uuid || "";
         const title = bookData.title || "Untitled Book";
         const description = bookData.description || "No description provided.";
@@ -204,56 +240,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const read = Boolean(bookData.read);
         const bookmarked = Boolean(bookData.bookmarked);
 
-        let card;
-        if (template && template.content) {
-            const clone = template.content.cloneNode(true);
-            card = clone.querySelector(".book-card");
-        } else {
-            card = document.createElement("section");
-            card.className = "book-card";
-            card.innerHTML = `
-                <div class="upper">
-                    <div class="book-info">
-                        <p class="title"></p>
-                        <p class="description"></p>
-                    </div>
-                    <div class="card-options">
-                        <button type="button" class="card-options-btn" title="Card Options">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-                        <div class="card-options-menu hidden">
-                            <label class="card-opt-item">
-                                <input type="checkbox" class="card-opt-bookmark">
-                                <span>Bookmark</span>
-                            </label>
-                            <label class="card-opt-item">
-                                <input type="checkbox" class="card-opt-read">
-                                <span>Read</span>
-                            </label>
-                            <button type="button" class="card-opt-delete">
-                                <i class="fa-solid fa-trash-can"></i> Delete
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="lower">
-                    <ul class="tags"></ul>
-                    <div class="mark-options">
-                        <div class="book-mark"><i class="fa-regular fa-bookmark"></i></div>
-                        <div class="read-mark"><i class="fa-solid fa-book-open"></i></div>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Populate dataset
+        // Assign dataset attributes
         card.removeAttribute("id");
         card.dataset.uuid = uuid;
         card.dataset.title = title;
         card.dataset.read = String(read);
         card.dataset.bookmarked = String(bookmarked);
 
-        // Populate content
+        // Populate card content
         const titleEl = card.querySelector(".title");
         if (titleEl) titleEl.textContent = title;
 
@@ -270,57 +264,26 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // Setup events and insert at the top of contentBox
+        // Attach event handlers and insert card at the top
         setupCardEvents(card);
         contentBox.prepend(card);
         return card;
     }
 
     /**
-     * Clear all book cards from #content-box
+     * Clear all book cards from #content-box.
      */
     function clearCards() {
         if (!contentBox) return;
         contentBox.innerHTML = "";
     }
 
-    // Connect middle bar "Add Book" button
-    if (addBookBtn) {
-        addBookBtn.addEventListener("click", () => {
-            const rawUrl = bookUrlInput ? bookUrlInput.value.trim() : "";
-            let derivedTitle = "New Book";
-            let derivedDesc = "Added from library collection.";
-
-            if (rawUrl) {
-                try {
-                    const parsed = new URL(rawUrl);
-                    const pathSegments = parsed.pathname.split("/").filter(Boolean);
-                    if (pathSegments.length > 0) {
-                        derivedTitle = decodeURIComponent(pathSegments[pathSegments.length - 1]).replace(/[-_]/g, " ");
-                        derivedTitle = derivedTitle.charAt(0).toUpperCase() + derivedTitle.slice(1);
-                    } else {
-                        derivedTitle = parsed.hostname;
-                    }
-                    derivedDesc = `Resource from ${parsed.hostname}`;
-                } catch {
-                    derivedTitle = rawUrl;
-                }
-            }
-
-            addBookCard({
-                title: derivedTitle,
-                description: derivedDesc,
-                tags: ["Web", "Reading"],
-                read: false,
-                bookmarked: false
-            });
-
-            if (bookUrlInput) bookUrlInput.value = "";
-        });
-    }
+    // ======================================================================
+    // 4. Filter & Sorting Handling
+    // ======================================================================
 
     /**
-     * Sort book cards in #content-box
+     * Sort book cards in #content-box by given criterion.
      * @param {string} type - "a-z", "z-a", "latest", "oldest"
      */
     function sortCards(type) {
@@ -347,7 +310,113 @@ document.addEventListener("DOMContentLoaded", () => {
         cards.forEach((card) => contentBox.appendChild(card));
     }
 
-    // Expose helpers globally
+    /**
+     * Initialize filter dropdown toggle and option selection.
+     */
+    function initFilterMenu() {
+        if (!filterBtn || !filterMenu) return;
+
+        filterBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            closeAllCardMenus();
+            filterMenu.classList.toggle("hidden");
+            filterBtn.classList.toggle("active");
+        });
+
+        filterOptions.forEach((option) => {
+            option.addEventListener("click", () => {
+                filterOptions.forEach((opt) => opt.classList.remove("selected"));
+                option.classList.add("selected");
+
+                filterMenu.classList.add("hidden");
+                filterBtn.classList.remove("active");
+
+                sortCards(option.dataset.sort);
+            });
+        });
+    }
+
+    // ======================================================================
+    // 5. Add Book Form Handling
+    // ======================================================================
+
+    /**
+     * Derive a clean book title and description from a user-entered URL.
+     * @param {string} rawUrl
+     * @returns {{ title: string, description: string }}
+     */
+    function parseBookUrl(rawUrl) {
+        let title = "New Book";
+        let description = "Added from library collection.";
+
+        if (!rawUrl) return { title, description };
+
+        try {
+            const parsed = new URL(rawUrl);
+            const pathSegments = parsed.pathname.split("/").filter(Boolean);
+            if (pathSegments.length > 0) {
+                title = decodeURIComponent(pathSegments[pathSegments.length - 1]).replace(/[-_]/g, " ");
+                title = title.charAt(0).toUpperCase() + title.slice(1);
+            } else {
+                title = parsed.hostname;
+            }
+            description = `Resource from ${parsed.hostname}`;
+        } catch {
+            title = rawUrl;
+        }
+
+        return { title, description };
+    }
+
+    /**
+     * Initialize the control-bar "Add Book" button and input listeners.
+     */
+    function initAddBookControl() {
+        if (!addBookBtn) return;
+
+        addBookBtn.addEventListener("click", () => {
+            const rawUrl = bookUrlInput ? bookUrlInput.value.trim() : "";
+            const { title, description } = parseBookUrl(rawUrl);
+
+            addBookCard({
+                uuid: "",
+                title,
+                description,
+                tags: ["Web", "Reading"],
+                read: false,
+                bookmarked: false
+            });
+
+            if (bookUrlInput) bookUrlInput.value = "";
+        });
+    }
+
+    // ======================================================================
+    // 6. Initialization & Global Exports
+    // ======================================================================
+
+    // Dismiss open menus when clicking outside
+    document.addEventListener("click", (event) => {
+        if (filterMenu && !filterMenu.contains(event.target) && !filterBtn?.contains(event.target)) {
+            filterMenu.classList.add("hidden");
+            filterBtn?.classList.remove("active");
+        }
+
+        if (!event.target.closest(".card-options")) {
+            closeAllCardMenus();
+        }
+    });
+
+    // Bind event handlers to all pre-rendered cards
+    document.querySelectorAll(".book-card").forEach((card) => {
+        setupCardEvents(card);
+    });
+
+    // Initialize UI controls
+    initFilterMenu();
+    initAddBookControl();
+
+    // Export helpers globally
     window.addBookCard = addBookCard;
     window.clearCards = clearCards;
 });
