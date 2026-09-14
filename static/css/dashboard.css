@@ -250,7 +250,7 @@ body {
     padding: 18px;
     overflow-y: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, 260px);
     gap: 16px;
     align-content: start;
 }
@@ -265,8 +265,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 155px;
-    gap: 12px;
+    width: 260px;
+    height: 190px;
+    box-sizing: border-box;
+    overflow: hidden;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -280,16 +282,24 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     gap: 8px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .book-info, #book-info {
     flex: 1;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .title, #title {
     margin: 0 0 6px 0;
     font-weight: 700;
     font-size: 1.05rem;
+    white-space: nowrap;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
 }
 
 .description, #description {
@@ -297,12 +307,18 @@ body {
     font-size: 0.88rem;
     color: #444444;
     line-height: 1.4;
+    height: 52px;
+    overflow: hidden;
+    word-break: break-word;
+    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
 }
 
 .card-options, #card-options {
     cursor: pointer;
     color: #555555;
     padding: 2px 4px;
+    flex-shrink: 0;
     transition: color 0.15s ease;
 }
 
@@ -317,6 +333,7 @@ body {
     margin-top: auto;
     padding-top: 8px;
     border-top: 1px dashed #dddddd;
+    flex-shrink: 0;
 }
 
 .tags, #tags {
@@ -325,7 +342,11 @@ body {
     padding: 0;
     display: flex;
     gap: 6px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    max-width: 140px;
+    mask-image: linear-gradient(to right, black 75%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 75%, transparent 100%);
 }
 
 .tags li {
