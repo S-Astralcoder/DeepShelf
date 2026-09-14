@@ -520,3 +520,202 @@ body {
 #option-contents > section.active {
     display: grid;
 }
+
+/* Settings Page Layout */
+#settings-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--background);
+    border: 1px solid var(--secondary);
+    border-radius: 12px;
+    box-shadow: 3px 3px 0px 1px var(--secondary);
+    padding: 12px 20px;
+}
+
+#settings-title p {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+#settings-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+}
+
+.settings-card {
+    background-color: var(--background);
+    border: 1px solid var(--secondary);
+    border-radius: 12px;
+    box-shadow: 3px 3px 0px 1px var(--secondary);
+    padding: 20px;
+}
+
+/* Profile Box */
+#profile-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#upper-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#profile-image-setting {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 2px solid var(--secondary);
+    box-shadow: 2px 2px 0px 1px var(--secondary);
+    object-fit: cover;
+}
+
+#profile-box-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.user-display-name,
+#setting-username {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.user-email,
+#setting-email {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555555;
+}
+
+#lower-box {
+    padding-top: 12px;
+    border-top: 1px dashed #dddddd;
+    display: flex;
+    align-items: center;
+}
+
+.tier-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(124, 171, 248, 0.25);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Settings Item Rows (Export & User Options) */
+#export,
+#user-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.setting-item-info h3 {
+    margin: 0 0 6px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.setting-item-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555555;
+}
+
+.setting-item-action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Settings Action Buttons */
+.btn-primary,
+#export-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 22px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: inherit;
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 20px;
+    box-shadow: 2px 2px 0px 1px var(--secondary);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover,
+#export-btn:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+    box-shadow: 0px 0px 0px 0px var(--secondary);
+}
+
+.btn-secondary,
+#logout-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 22px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: inherit;
+    background-color: var(--background);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 20px;
+    box-shadow: 2px 2px 0px 1px var(--secondary);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-secondary:hover,
+#logout-btn:hover {
+    background-color: var(--secondary);
+    color: var(--background);
+    box-shadow: 0px 0px 0px 0px var(--secondary);
+}
+
+.btn-danger,
+#clear-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 22px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: inherit;
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid var(--secondary);
+    border-radius: 20px;
+    box-shadow: 2px 2px 0px 1px var(--secondary);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-danger:hover,
+#clear-btn:hover {
+    background-color: #991b1b;
+    color: #ffffff;
+    box-shadow: 0px 0px 0px 0px var(--secondary);
+}

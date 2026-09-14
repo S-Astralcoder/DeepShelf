@@ -37,28 +37,49 @@
         </section>
     </aside>
     <main id="main-box">
-        <section id="profile-box">
-            <div id="upper-box">
-                <div id="profile-box-info">
-                    <p id="username"></p>
-                    <p id="email"></p>
-                </div>
-                <div id="profile-image-box">
-                    <img id="profile-image-setting" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJbhN88I9CuUGPLDK9IAkwPQl5jV4JPQpyn3nvGDFqo8JFF8U3TEikCOUq&s=10" alt="profile-image">
-                </div>
+        <header id="settings-bar">
+            <div id="settings-title">
+                <p>Settings</p>
             </div>
-            <div id="lower-box">
-                <div id="subscription-tier">
-                    <p></p>
+        </header>
+        <section id="settings-content">
+            <section id="profile-box" class="settings-card">
+                <div id="upper-box">
+                    <div id="profile-image-box">
+                        <img id="profile-image-setting" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJbhN88I9CuUGPLDK9IAkwPQl5jV4JPQpyn3nvGDFqo8JFF8U3TEikCOUq&s=10" alt="profile-image">
+                    </div>
+                    <div id="profile-box-info">
+                        <p id="setting-username" class="user-display-name">UserNmae</p>
+                        <p id="setting-email" class="user-email">username@example.com</p>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="user-options">
-            <button>Logout</button>
-            <button>Clear Data</button>
-        </section>
-        <section id="export">
-            <button>Export Data</button>
+                <div id="lower-box">
+                    <div id="subscription-tier">
+                        <span class="tier-tag"><i class="fa-solid fa-crown"></i> Free Tier Plan</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="export" class="settings-card">
+                <div class="setting-item-info">
+                    <h3>Data Management</h3>
+                    <p>Export your book library and personal shelf records as a backup.</p>
+                </div>
+                <div class="setting-item-action">
+                    <button id="export-btn" class="btn-primary"><i class="fa-solid fa-file-export"></i> Export Data</button>
+                </div>
+            </section>
+
+            <section id="user-options" class="settings-card">
+                <div class="setting-item-info">
+                    <h3>Account Actions</h3>
+                    <p>Manage your active session or clear cached book collections.</p>
+                </div>
+                <div id="actions-group" class="setting-item-action">
+                    <button id="logout-btn" class="btn-secondary"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+                    <button id="clear-btn" class="btn-danger"><i class="fa-solid fa-trash-can"></i> Clear Data</button>
+                </div>
+            </section>
         </section>
     </main>
 </body>
