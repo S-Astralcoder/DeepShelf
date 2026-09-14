@@ -298,8 +298,8 @@ body {
     font-size: 1.05rem;
     white-space: nowrap;
     overflow: hidden;
-    mask-image: linear-gradient(to right, black 80%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+    mask-image: linear-gradient(to right, black calc(100% - 16px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black calc(100% - 16px), transparent 100%);
 }
 
 .description, #description {
@@ -310,8 +310,8 @@ body {
     height: 52px;
     overflow: hidden;
     word-break: break-word;
-    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black calc(100% - 10px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 10px), transparent 100%);
 }
 
 .card-options, #card-options {
@@ -345,8 +345,8 @@ body {
     flex-wrap: nowrap;
     overflow: hidden;
     max-width: 140px;
-    mask-image: linear-gradient(to right, black 75%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, black 75%, transparent 100%);
+    mask-image: linear-gradient(to right, black calc(100% - 12px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black calc(100% - 12px), transparent 100%);
 }
 
 .tags li {
