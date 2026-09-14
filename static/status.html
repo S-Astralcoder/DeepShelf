@@ -55,11 +55,26 @@
                 <p class="total-count">6</p> 
             </section>
         </section>
-        <ul id="book-options">
-            <li class="active" data-target="read-contents">Read</li>
-            <li data-target="unread-contents">Unread</li>
-            <li data-target="book-marked-contents">BookMarked</li>
-        </ul>
+        <div id="status-controls-bar">
+            <ul id="book-options">
+                <li class="active" data-target="read-contents">Read</li>
+                <li data-target="unread-contents">Unread</li>
+                <li data-target="book-marked-contents">BookMarked</li>
+            </ul>
+            <div id="filter-container">
+                <button type="button" id="filter-btn" title="Filter and Sort">
+                    <i class="fa-solid fa-sliders"></i>
+                </button>
+                <div id="filter-menu" class="hidden">
+                    <ul id="filter-options">
+                        <li data-sort="a-z"><i class="fa-solid fa-arrow-down-a-z"></i> A-z</li>
+                        <li data-sort="z-a"><i class="fa-solid fa-arrow-up-z-a"></i> z-A</li>
+                        <li data-sort="latest"><i class="fa-solid fa-arrow-down-wide-short"></i> latest</li>
+                        <li data-sort="oldest"><i class="fa-solid fa-arrow-up-wide-short"></i> oldest</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <section id="option-contents">
             <section id="read-contents" class="active">
                 <section class="book-card">

@@ -532,6 +532,14 @@ body {
     line-height: 1.1;
 }
 
+/* Status Controls Bar */
+#status-controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+}
+
 /* Book Options Tabs */
 #book-options {
     list-style: none;
