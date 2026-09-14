@@ -116,6 +116,15 @@ body {
     border-radius: 10px;
     box-shadow: 2px 2px 0px 1px var(--secondary);
     padding: 10px 12px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#profile-card:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px 1px var(--secondary);
 }
 
 #profile-image {
