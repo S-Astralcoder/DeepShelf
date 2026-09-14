@@ -508,12 +508,15 @@ body {
 #unread-contents,
 #book-marked-contents {
     flex: 1;
-    display: grid;
+    display: none;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 16px;
     align-content: start;
 }
 
-#option-contents > section:not(.active):not(:first-child) {
-    display: none;
+#read-contents.active,
+#unread-contents.active,
+#book-marked-contents.active,
+#option-contents > section.active {
+    display: grid;
 }

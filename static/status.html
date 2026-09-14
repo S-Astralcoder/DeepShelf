@@ -56,21 +56,319 @@
             </section>
         </section>
         <ul id="book-options">
-            <li class="active">Read</li>
-            <li>Unread</li>
-            <li>BookMarked</li>
+            <li class="active" data-target="read-contents">Read</li>
+            <li data-target="unread-contents">Unread</li>
+            <li data-target="book-marked-contents">BookMarked</li>
         </ul>
         <section id="option-contents">
-            <section id="read-contents">
-
+            <section id="read-contents" class="active">
+                <section class="book-card">
+                    <div class="upper">
+                        <div class="book-info">
+                            <p class="title">Clean Code</p>
+                            <p class="description">A Handbook of Agile Software Craftsmanship.</p>
+                        </div>
+                        <div class="card-options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="lower">
+                        <ul class="tags">
+                            <li>Tech</li>
+                            <li>Programming</li>
+                        </ul>
+                        <div class="mark-options">
+                            <div class="book-mark">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </div>
+                            <div class="read-mark">
+                                <i class="fa-solid fa-book-open" style="color: var(--primary);"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="book-card">
+                    <div class="upper">
+                        <div class="book-info">
+                            <p class="title">The Pragmatic Programmer</p>
+                            <p class="description">Your Journey To Mastery, 20th Anniversary Edition.</p>
+                        </div>
+                        <div class="card-options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="lower">
+                        <ul class="tags">
+                            <li>Career</li>
+                            <li>Software</li>
+                        </ul>
+                        <div class="mark-options">
+                            <div class="book-mark">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </div>
+                            <div class="read-mark">
+                                <i class="fa-solid fa-book-open" style="color: var(--primary);"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="book-card">
+                    <div class="upper">
+                        <div class="book-info">
+                            <p class="title">Design Patterns</p>
+                            <p class="description">Elements of Reusable Object-Oriented Software.</p>
+                        </div>
+                        <div class="card-options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="lower">
+                        <ul class="tags">
+                            <li>Architecture</li>
+                            <li>OOP</li>
+                        </ul>
+                        <div class="mark-options">
+                            <div class="book-mark">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </div>
+                            <div class="read-mark">
+                                <i class="fa-solid fa-book-open" style="color: var(--primary);"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="book-card">
+                    <div class="upper">
+                        <div class="book-info">
+                            <p class="title">Refactoring</p>
+                            <p class="description">Improving the Design of Existing Code.</p>
+                        </div>
+                        <div class="card-options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="lower">
+                        <ul class="tags">
+                            <li>Best Practices</li>
+                        </ul>
+                        <div class="mark-options">
+                            <div class="book-mark">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </div>
+                            <div class="read-mark">
+                                <i class="fa-solid fa-book-open" style="color: var(--primary);"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </section>
             <section id="unread-contents">
-
+                <section class="book-card">
+                    <div class="upper">
+                        <div class="book-info">
+                            <p class="title">Designing Data-Intensive Applications</p>
+                            <p class="description">The big ideas behind reliable, scalable systems.</p>
+                        </div>
+                        <div class="card-options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="lower">
+                        <ul class="tags">
+                            <li>Systems</li>
+                            <li>Database</li>
+                        </ul>
+                        <div class="mark-options">
+                            <div class="book-mark">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </div>
+                            <div class="read-mark">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="book-card">
+                    <div class="upper">
+                        <div class="book-info">
+                            <p class="title">Introduction to Algorithms</p>
+                            <p class="description">Comprehensive foundation of algorithmic problem solving.</p>
+                        </div>
+                        <div class="card-options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="lower">
+                        <ul class="tags">
+                            <li>Algorithms</li>
+                            <li>CS</li>
+                        </ul>
+                        <div class="mark-options">
+                            <div class="book-mark">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </div>
+                            <div class="read-mark">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="book-card">
+                    <div class="upper">
+                        <div class="book-info">
+                            <p class="title">Structure & Interpretation of Computer Programs</p>
+                            <p class="description">Functional programming and computer abstraction principles.</p>
+                        </div>
+                        <div class="card-options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="lower">
+                        <ul class="tags">
+                            <li>Lisp</li>
+                            <li>Theory</li>
+                        </ul>
+                        <div class="mark-options">
+                            <div class="book-mark">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </div>
+                            <div class="read-mark">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="book-card">
+                    <div class="upper">
+                        <div class="book-info">
+                            <p class="title">Database Internals</p>
+                            <p class="description">A deep dive into how distributed storage and engines work.</p>
+                        </div>
+                        <div class="card-options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="lower">
+                        <ul class="tags">
+                            <li>Storage</li>
+                            <li>Distributed</li>
+                        </ul>
+                        <div class="mark-options">
+                            <div class="book-mark">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </div>
+                            <div class="read-mark">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </section>
             <section id="book-marked-contents">
-                
+                <section class="book-card">
+                    <div class="upper">
+                        <div class="book-info">
+                            <p class="title">Clean Architecture</p>
+                            <p class="description">A Craftsman's Guide to Software Structure and Design.</p>
+                        </div>
+                        <div class="card-options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="lower">
+                        <ul class="tags">
+                            <li>Architecture</li>
+                        </ul>
+                        <div class="mark-options">
+                            <div class="book-mark">
+                                <i class="fa-solid fa-bookmark" style="color: var(--primary);"></i>
+                            </div>
+                            <div class="read-mark">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="book-card">
+                    <div class="upper">
+                        <div class="book-info">
+                            <p class="title">Site Reliability Engineering</p>
+                            <p class="description">How Google runs production systems at scale.</p>
+                        </div>
+                        <div class="card-options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="lower">
+                        <ul class="tags">
+                            <li>DevOps</li>
+                            <li>SRE</li>
+                        </ul>
+                        <div class="mark-options">
+                            <div class="book-mark">
+                                <i class="fa-solid fa-bookmark" style="color: var(--primary);"></i>
+                            </div>
+                            <div class="read-mark">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="book-card">
+                    <div class="upper">
+                        <div class="book-info">
+                            <p class="title">Rust in Action</p>
+                            <p class="description">Systems programming with memory safety and speed.</p>
+                        </div>
+                        <div class="card-options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="lower">
+                        <ul class="tags">
+                            <li>Rust</li>
+                            <li>Systems</li>
+                        </ul>
+                        <div class="mark-options">
+                            <div class="book-mark">
+                                <i class="fa-solid fa-bookmark" style="color: var(--primary);"></i>
+                            </div>
+                            <div class="read-mark">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="book-card">
+                    <div class="upper">
+                        <div class="book-info">
+                            <p class="title">Deep Learning</p>
+                            <p class="description">Comprehensive textbook on deep learning by Goodfellow and Bengio.</p>
+                        </div>
+                        <div class="card-options">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="lower">
+                        <ul class="tags">
+                            <li>AI</li>
+                            <li>Machine Learning</li>
+                        </ul>
+                        <div class="mark-options">
+                            <div class="book-mark">
+                                <i class="fa-solid fa-bookmark" style="color: var(--primary);"></i>
+                            </div>
+                            <div class="read-mark">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </section>
         </section>
     </main>
+
+    <!-- Script -->
+    <script src="js/status.js"></script>
 </body>
 </html>
