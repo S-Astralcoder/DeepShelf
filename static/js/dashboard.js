@@ -190,14 +190,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /**
+     * Generate standard UUID v4
+     */
+    function generateUUID() {
+        if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+            return crypto.randomUUID();
+        }
+        return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+            const r = (Math.random() * 16) | 0;
+            const v = c === "x" ? r : (r & 0x3) | 0x8;
+            return v.toString(16);
+        });
+    }
+
+    /**
      * Dynamically add a new book card to #content-box
-     * @param {Object} bookData - { id, title, description, tags, read, bookmarked }
+     * @param {Object} bookData - { uuid, id, title, description, tags, read, bookmarked }
      * @returns {HTMLElement} The created card element
      */
     function addBookCard(bookData = {}) {
         if (!contentBox) return null;
 
-        const id = bookData.id || `book-${Date.now()}`;
+        const uuid = bookData.uuid || generateUUID();
+        const id = bookData.id || uuid;
         const title = bookData.title || "Untitled Book";
         const description = bookData.description || "No description provided.";
         const tags = Array.isArray(bookData.tags) ? bookData.tags : (bookData.tags ? [bookData.tags] : ["General"]);
@@ -248,6 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Populate dataset
         card.removeAttribute("id");
+        card.dataset.uuid = uuid;
         card.dataset.id = id;
         card.dataset.title = title;
         card.dataset.read = String(read);
